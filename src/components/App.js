@@ -13,7 +13,9 @@ const App = () => {
     };
 
     useEffect(() => {
-        setLoader(true);
+        if(id !== ''){
+            setLoader(true);
+        }
         try {
             const fetchData = async () => {
                 const response = await fetch('https://jsonplaceholder.typicode.com/photos/${id}');
@@ -27,9 +29,7 @@ const App = () => {
             setPhotoData(null);
         }
 
-        if(id !== ''){
-            fetchData();
-        }
+        fetchData();
     }, [id]);
 
     return (
