@@ -15,12 +15,12 @@ const App = () => {
     useEffect(() => {
         const fetchData = async () => {
             if(id !== ''){
-                setLoader(true);
                 try {
+                    setLoader(true);
                     const response = await fetch(`https://jsonplaceholder.typicode.com/photos/${id}`);
                     const data = await response.json();
-                    setPhotoData(data);
                     setLoader(false);
+                    setPhotoData(data);
                 }
                 catch (error) {
                     console.log('Error: ' + error);
@@ -34,7 +34,7 @@ const App = () => {
         }
 
         fetchData();
-    }, []);
+    }, [id]);
 
     return (
         <div>
