@@ -34,7 +34,7 @@ const App = () => {
         }
 
         fetchData();
-    }, [id]);
+    }, []);
 
     return (
         <div>
